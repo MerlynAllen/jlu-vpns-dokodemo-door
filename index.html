@@ -1,13 +1,11 @@
 <html>
-<p>Paste your url here.</p>
-<input id="url"></input>
-<button id="warp" onclick="onclick()">Warp!</button>
-<a href="http://www.baidu.com"id="link">And click here.</a>
 <script>
-    (function onclick(){
-        lnk = document.getElementById("link");
-        url = document.getElementById("url").innerText;
-        lnk.href = url;
-    });
+    function warp(){
+        url = document.getElementById("url").value;
+        location.href = url;
+    };
 </script>
+<p>Paste full url here.</p>
+<input id="url"></input>
+<button id="warp" onclick="javascript:warp();">Warp!</button>
 </html>
