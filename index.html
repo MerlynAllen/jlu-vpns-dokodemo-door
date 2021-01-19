@@ -1,0 +1,13 @@
+<html>
+<p>Paste your url here.</p>
+<input id="url"></input>
+<button id="warp" onclick="onclick()">Warp!</button>
+<a href="http://www.baidu.com"id="link">And click here.</a>
+<script>
+    (function onclick(){
+        lnk = document.getElementById("link");
+        url = document.getElementById("link").innerText;
+        lnk.href = url;
+    });
+</script>
+</html>
