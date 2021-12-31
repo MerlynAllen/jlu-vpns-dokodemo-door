@@ -1,9 +1,31 @@
 <html>
 <script>
-    function warp(){
-        url = document.getElementById("url").value;
-        location.href = url;
+    window.onload = function () {
+        var r = window.location.search.substr(1);
+        if (checkUrl(r)) {
+            location.href = r;
+        }else{
+            alert("URL not valid! Try input FULL url in textbox below.");
+        }
     };
+    function warp() {
+        var dest = document.getElementById("url").value;
+        if (checkUrl(dest)) {
+            location.href = dest;
+        }else{
+            alert("URL not valid!");
+        }
+    }
+    function checkUrl(url) {
+        var str = url;
+        var regexp = "/http(s):\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/";
+        var re = new RegExp(regexp);
+        if (re.test(str) == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 </script>
 <p>Paste full url here.</p>
 <input id="url"></input>
