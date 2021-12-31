@@ -5,7 +5,7 @@
         var r = window.location.search.substr(1);
         alert("Navigating to " + r)
         if (checkUrl(r)) {
-            window.navigate(r);
+            window.location.href = r;
         }else{
             alert("URL not valid! Try input FULL url in textbox below.");
         }
@@ -13,14 +13,14 @@
     function warp() {
         var dest = document.getElementById("url").value;
         if (checkUrl(dest)==true) {
-            window.navigate(r);
+            window.location.href = dest;
         }else{
             alert("URL not valid!");
         }
     }
     function checkUrl(url) {
         var str = url;
-        var regexp = "(http|ftp|https)://[w-]+(.[w-]+)+([w.,@?^=%&amp;:/~+#-]*[w@?^=%&amp;/~+#-])?"
+        var regexp = "(http|ftp|https):\/\/[w-]+(.[w-]+)+([w.,@?^=%&amp;:\/~+#-]*[w@?^=%&amp;\/~+#-])?"
         var re = new RegExp(regexp);
         if (re.test(str) == true) {
             return true;
