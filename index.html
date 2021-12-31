@@ -1,24 +1,26 @@
 <html>
+<body>
 <script>
-    window.onload = function () {
+    (function () {
         var r = window.location.search.substr(1);
+        alert("Navigating to " + r)
         if (checkUrl(r)) {
-            location.href = r;
+            window.navigate(r);
         }else{
             alert("URL not valid! Try input FULL url in textbox below.");
         }
-    };
+    })()
     function warp() {
         var dest = document.getElementById("url").value;
-        if (checkUrl(dest)) {
-            location.href = dest;
+        if (checkUrl(dest)==true) {
+            window.navigate(r);
         }else{
             alert("URL not valid!");
         }
     }
     function checkUrl(url) {
         var str = url;
-        var regexp = "/http(s):\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/";
+        var regexp = "(http|ftp|https)://[w-]+(.[w-]+)+([w.,@?^=%&amp;:/~+#-]*[w@?^=%&amp;/~+#-])?"
         var re = new RegExp(regexp);
         if (re.test(str) == true) {
             return true;
@@ -30,4 +32,5 @@
 <p>Paste full url here.</p>
 <input id="url"></input>
 <button id="warp" onclick="javascript:warp();">Warp!</button>
+</body>
 </html>
