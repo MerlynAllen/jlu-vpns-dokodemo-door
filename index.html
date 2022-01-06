@@ -8,6 +8,7 @@
             window.location.href = r;
         }else{
             alert("URL not valid! Try input FULL url in textbox below.");
+            console.log(`${r}`)
         }
     })()
     function warp() {
@@ -20,7 +21,7 @@
     }
     function checkUrl(url) {
         var str = url;
-        var regexp = "(http|ftp|https):\/\/[w-]+(.[w-]+)+([w.,@?^=%&amp;:\/~+#-]*[w@?^=%&amp;\/~+#-])?"
+        var regexp = "(http|ftp|https):\\/\\/[\\w-]+(\\.[\\w-]+)+(:[0-9]{1,5})?\\/?[\\w./?&*\\-=%~:;()'^@+$,#\\[\\]]*";
         var re = new RegExp(regexp);
         if (re.test(str) == true) {
             return true;
