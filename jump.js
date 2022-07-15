@@ -25,7 +25,7 @@ function encrypt_url(base_url) {
     return url;
 }
 
-var app = function(request, response) {
+var handler = function(request, response) {
     var url = request.url.substr(1);
     var encrypted_url = encrypt_url(url);
     response.writeHead(302, {
@@ -33,7 +33,6 @@ var app = function(request, response) {
     });
     response.end();
 }
+var server = http.createServer(handler);
 
-var server = http.createServer(app);
-
-server.listen(80);
+server.listen(process.env.PORT);
