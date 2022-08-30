@@ -1,7 +1,10 @@
 const crypto = require('crypto');
 const http = require('http');
-var key = 'wrdvpnisthebest!';
-var iv = 'wrdvpnisthebest!';
+// var key = 'wrdvpnisthebest!';
+// var iv = 'wrdvpnisthebest!';
+var key = 'jluvpnisthegood!';
+var iv = 'jluvpnisthegood!';
+
 
 function encrypt_url(base_url) {
     const fullurl = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
@@ -20,7 +23,7 @@ function encrypt_url(base_url) {
     var host = base_url.host;
     var path = base_url.pathname + base_url.search;
     var enctypted_host = cipher.update(host, 'utf8', 'hex');
-    var url = "https://webvpn.jlu.edu.cn/" + protocol + "/77726476706e69737468656265737421" + enctypted_host + path;
+    var url = "https://vpn.jlu.edu.cn/" + protocol + "/6a6c7576706e6973746865676f6f6421" + enctypted_host + path;
     console.log(url);
     return url;
 }
