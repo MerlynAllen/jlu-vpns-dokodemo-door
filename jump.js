@@ -22,8 +22,8 @@ function encrypt_url(base_url) {
     var protocol = base_url.protocol.split(':')[0];
     var host = base_url.host;
     var path = base_url.pathname + base_url.search;
-    var enctypted_host = cipher.update(host, 'utf8', 'hex');
-    var url = "https://vpn.jlu.edu.cn/" + protocol + "/6a6c7576706e6973746865676f6f6421" + enctypted_host + path;
+    var encrypted_host = cipher.update(host, 'utf8', 'hex');
+    var url = "https://vpn.jlu.edu.cn/" + protocol + "/6a6c7576706e6973746865676f6f6421" + encrypted_host + path;
     console.log(url);
     return url;
 }
