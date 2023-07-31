@@ -2,8 +2,10 @@ const crypto = require('crypto');
 const http = require('http');
 // var key = 'wrdvpnisthebest!';
 // var iv = 'wrdvpnisthebest!';
-var key = 'jluvpnisthegood!';
-var iv = 'jluvpnisthegood!';
+// var key = 'jluvpnisthegood!';
+// var iv = 'jluvpnisthegood!';
+var key = 'Didida1127Didida';
+var iv = 'Didida1127Didida';
 
 function main_page() {
     return `
@@ -19,8 +21,8 @@ function main_page() {
     <button onclick="jump()">Jump</button>
     <p>常用站点:
     <ul>
-    <li><a href="https://vpn.jlu.edu.cn/https/6a6c7576706e6973746865676f6f642146ab1ccaa88ac2a733d52e8cff/">百度</a></li>
-    <li><a href="https://vpn.jlu.edu.cn/https/6a6c7576706e6973746865676f6f642152b24586a385cced259420/">必应</a></li>
+    <li><a href="https://vpn.jlu.edu.cn/https/44696469646131313237446964696461bd6feb2601c9a213d915e463da/">百度</a></li>
+    <li><a href="https://vpn.jlu.edu.cn/https/44696469646131313237446964696461a976b26a0ac6ac59cf54ea/">必应</a></li>
     </ul>
     </p>
     </body>
@@ -52,7 +54,7 @@ function encrypt_url(base_url) {
     var host = base_url.host;
     var path = base_url.pathname + base_url.search;
     var encrypted_host = cipher.update(host, 'utf8', 'hex');
-    var url = "https://vpn.jlu.edu.cn/" + protocol + "/6a6c7576706e6973746865676f6f6421" + encrypted_host + path;
+    var url = "https://vpn.jlu.edu.cn/" + protocol + "/44696469646131313237446964696461" + encrypted_host + path;
     console.log(url);
     return url;
 }
